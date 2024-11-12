@@ -1,6 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useRef, useState, useEffect } from "react";
 import { sortOrders } from "@/utils/sortingUtils";
+import { Order } from "@/types/order";
 
 const fetchOrders = async ({ pageParam = null }) => {
   const res = await fetch(`/api/orders?cursor=${pageParam}`);
@@ -20,7 +21,7 @@ export const useOrders = () => {
   });
 
   const orders = data?.pages.flatMap((page) => page.data) ?? [];
-  const sortedOrders = sortOrders(orders, sortConfig);
+  const sortedOrders: Order[] = sortOrders(orders, sortConfig);
 
   const requestSort = (key: string) => {
     let direction = "ascending";
