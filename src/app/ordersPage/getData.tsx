@@ -20,9 +20,6 @@ export const fetchData = async (
     })
   }
 
-  //simulate a backend api
-  await new Promise(resolve => setTimeout(resolve, 100))
-
   return {
     data: dbData.slice(start, start + size),
     meta: {
