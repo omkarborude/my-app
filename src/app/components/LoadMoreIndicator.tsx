@@ -10,10 +10,9 @@ const LoadMoreIndicator = forwardRef<HTMLDivElement, LoadMoreIndicatorProps>(
   ({ isFetchingNextPage, hasNextPage }, ref) => (
     <div
       ref={ref}
-      className="text-center mt-10"
-      style={{ visibility: isFetchingNextPage ? "visible" : "hidden" }}
+      className="text-center mb-[0px] mt-2"
     >
-      {isFetchingNextPage ? "Loading more..." : hasNextPage ? "Load More" : "No More Orders"}
+      {isFetchingNextPage  ? "Loading more..." : hasNextPage ? "Load More" : "No More Orders"}
     </div>
   )
 );
