@@ -37,7 +37,7 @@ export async function GET(request) {
     );
   } catch (error) {
     return new NextResponse(
-      JSON.stringify({ success: false, error: 'Failed to fetch orders' }),
+      JSON.stringify({ success: false, error: 'Failed to fetch orders' + error }),
       { status: 500 }
     );
   }

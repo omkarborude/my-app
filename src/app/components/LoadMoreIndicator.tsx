@@ -5,6 +5,7 @@ type LoadMoreIndicatorProps = {
   hasNextPage: boolean;
 };
 
+/* eslint-disable react/display-name */
 const LoadMoreIndicator = forwardRef<HTMLDivElement, LoadMoreIndicatorProps>(
   ({ isFetchingNextPage, hasNextPage }, ref) => (
     <div

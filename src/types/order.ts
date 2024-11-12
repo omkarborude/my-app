@@ -1,18 +1,21 @@
 // src/types/order.ts
 
+// src/types/order.ts
 export interface Order {
-    id: string;
-    customerName: string;
-    orderAmount: number;
-    status: 'pending' | 'processing' | 'completed' | 'cancelled';
-    items: Array<{
-      name: string;
-      quantity: number;
-      price: number;
-    }>;
-    createdAt: string; // ISO string representation of the order's creation date
-  }
-  
+  id: number; // Update the type of id to number
+  customerName: string;
+  orderAmount: number;
+  status: 'pending' | 'processing' | 'completed' | 'cancelled';
+  items: Array<{
+    name: string;
+    quantity: number;
+    price: number;
+  }>;
+  name: string;
+  quantity: number;
+  price: number;
+  createdAt: string;
+}
   export interface OrdersResponse {
     data: Order[];
     nextCursor: string | null; // Cursor for pagination; null if there are no more pages

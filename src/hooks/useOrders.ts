@@ -37,8 +37,10 @@ export const useOrders = () => {
       }
     };
     observer.current = new IntersectionObserver(observerCallback, { rootMargin: "100px" });
-    loadingRef.current && observer.current.observe(loadingRef.current);
-
+    if (loadingRef.current) {
+      observer.current.observe(loadingRef.current);
+    }
+    
     return () => {
       observer.current && loadingRef.current && observer.current.unobserve(loadingRef.current);
     };
