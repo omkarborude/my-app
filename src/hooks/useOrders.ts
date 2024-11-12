@@ -37,7 +37,7 @@ export const useOrders = () => {
         fetchNextPage();
       }
     };
-    observer.current = new IntersectionObserver(observerCallback, { rootMargin: "100px" });
+    observer.current = new IntersectionObserver(observerCallback, { rootMargin: "150px" });
     if (loadingRef.current) {
       observer.current.observe(loadingRef.current);
     }
